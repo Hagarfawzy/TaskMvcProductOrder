@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Products</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <ul class="nav bg-light">
+        <li class="nav-item fw-bold">
+            <a class="nav-link active" aria-current="page" href="#">LOGO</a>
+        </li>
+        <li class="nav-item fw-bold">
+            <a class="nav-link" href="#">Email</a>
+        </li>
+     
+    </ul>
+    <div class="row">
+        <aside class="col-2 bg-info">
+            <ul class="">
+                <li class="nav-link active m-4 fw-bold text-light"> @Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="nav-link active m-4 fw-bold text-light"> @Html.ActionLink("Product", "Index", "Products")</li>
+                <li class="nav-link active m-4 fw-bold text-light"> @Html.ActionLink("Ordes", "Index", "Orders")</li>
+                <li class="nav-link active m-4 fw-bold text-light"> @Html.ActionLink("Register", "Register", "Users")</li>
+            </ul>
+        </aside>
+
+        <div class="container body-content col-10">
+            @RenderBody()
+
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Products</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>
